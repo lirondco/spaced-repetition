@@ -1,0 +1,33 @@
+.guess_word {
+    width: fit-content;
+    margin: auto;
+    margin-top: 3%;
+    background-color: #E3DBB6;
+    padding: 2%;
+    border-radius: 15px;
+    color: #561926;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.guess_form {
+    margin: auto;
+    margin-top: 5%;
+}
+
+.actuaL_word {
+    font-size: xx-large;
+}
+
+.guess_form input {
+    margin: auto;
+    margin-top: 2%;
+}
+
+.guess_form button {
+    margin: auto;
+    padding: 3%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
