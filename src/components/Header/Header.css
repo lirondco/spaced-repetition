@@ -1,0 +1,26 @@
+h1 {
+    font-family: 'Righteous', cursive;
+    margin: 1%;
+}
+
+.navbarlink, .header {
+    color: white;
+}
+
+.navbarlink {
+    margin: 1%;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: #E54443;
+    padding: 1%;
+    text-align: center;
+}
+
+.userName {
+    color: #E3DBB6;
+}

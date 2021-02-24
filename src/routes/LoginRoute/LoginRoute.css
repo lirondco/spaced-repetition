@@ -1,0 +1,12 @@
+.loginpage {
+    background-color: #E3DBB6;
+    margin: 5% 20% 5% 20%;
+    padding: 2%;
+    border-radius: 15px;
+    color: #561926;
+    text-align: center;
+}
+
+p, h2 {
+    margin: 2%;
+}
