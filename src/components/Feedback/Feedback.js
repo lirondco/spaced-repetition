@@ -14,12 +14,11 @@ export default class Feedback extends Component {
     }
 
     render() {
-        console.log(this.props, "feedback props")
         return (
             <div className="feedback">
                 {this.renderMessage()}
-                <p className = "DisplayScore">Your total score is: {this.props.total}</p>
-                <p className = "DisplayFeedback">The correct translation for <span lang="he" dir="rtl">{this.props.lastWord}</span> was {this.props.answer} and you chose {this.props.guess.answer}!</p>
+                <div className = "DisplayScore"><p>Your total score is: {this.props.total}</p></div>
+                <div className = "DisplayFeedback"><p>The correct translation for <span lang="he" dir="rtl">{this.props.lastWord}</span> was {this.props.answer} and you chose {this.props.userAnswer}!</p></div>
                 <Button onClick={this.props.tryAnotherClick}>
                     Try another word!
                 </Button>

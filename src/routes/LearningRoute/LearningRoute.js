@@ -38,7 +38,6 @@ componentDidMount() {
   handleSubmit = (ev) => {
     ev.preventDefault()
     const guess = this.state.guess
-    console.log("submit" , guess)
     LanguageApiService.submitGuess(guess)
     .then(guess => {
       this.context.setLastWord(this.context.nextWord)
@@ -61,7 +60,7 @@ componentDidMount() {
       isCorrect = {this.context.isCorrect}
       lastWord = {this.context.lastWord}
       answer = {this.context.answer}
-      guess = {this.context.guess}
+      userAnswer = {this.state.guess}
       tryAnotherClick = {this.handleNext}
       total = {this.context.totalScore}
       />) 
