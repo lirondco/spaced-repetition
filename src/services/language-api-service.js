@@ -27,6 +27,24 @@ const LanguageApiService = {
             : res.json()    
           )
       },
+      submitGuess(guess) {
+
+        return fetch(`${config.API_ENDPOINT}/language/guess`, {
+          method: 'POST',
+          headers: {
+            'authorization': `Bearer ${TokenService.getAuthToken()}`,
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify({ guess: guess }),
+        })
+        .then(res => {
+          if (!res.ok) {
+            return res.json().then(e => Promise.reject(e.error))
+          }
+          return res.json()
+        })
+        .catch(e => console.error(e));
+      }
 }
 
 export default LanguageApiService;

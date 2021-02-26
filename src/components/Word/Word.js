@@ -9,7 +9,8 @@ export default class Word extends Component {
             <div className = "guess_word">
                 <h2 className = "word_label">Translate the word:</h2>
                 <span lang='he' dir='rtl' className = "actuaL_word">{this.props.word}</span>
-                <form className = "guess_form" onSubmit = {this.props.handleGuess}>
+                <form className = "guess_form" htmlFor="guessForm" onSubmit = {e => {console.log(e)
+                this.props.handleGuess(e)}}>
                     <Label 
                         htmlFor = "learn-guess-input"
                     >
@@ -19,6 +20,7 @@ export default class Word extends Component {
                         id = "learn-guess-input"
                         name = "guess"
                         type = "text"
+                        onChange = {this.props.onChange}
                         required
                     />
                     <Button 
