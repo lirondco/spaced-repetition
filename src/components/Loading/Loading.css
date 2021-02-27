@@ -1,0 +1,12 @@
+.loading {
+    width: fit-content;
+    margin: auto;
+    margin-top: 3%;
+    background-color: #E3DBB6;
+    padding: 2%;
+    border-radius: 15px;
+    color: #561926;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}

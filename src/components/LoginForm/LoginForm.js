@@ -4,6 +4,7 @@ import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/UserContext'
 import Button from '../Button/Button'
 import './LoginForm.css'
+import Loading from '../Loading/Loading'
 
 class LoginForm extends Component {
   static defaultProps = {
@@ -12,7 +13,10 @@ class LoginForm extends Component {
 
   static contextType = UserContext
 
-  state = { error: null }
+  state = { 
+    error: null,
+    isLoading: false
+  }
 
   firstInput = React.createRef()
 
@@ -27,11 +31,13 @@ class LoginForm extends Component {
       password: password.value,
     })
       .then(res => {
+        this.setState({ isLoading: true })
         username.value = ''
         password.value = ''
         this.context.processLogin(res.authToken)
         this.props.onLoginSuccess()
       })
+      .then(this.setState({ isLoading: false}))
       .catch(res => {
         this.setState({ error: res.error })
       })
@@ -43,6 +49,9 @@ class LoginForm extends Component {
 
   render() {
     const { error } = this.state
+    if(this.state.isLoading === true) {
+      return <Loading />
+    }
     return (
       <form
         className='LoginForm'

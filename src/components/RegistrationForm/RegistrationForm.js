@@ -5,13 +5,17 @@ import AuthApiService from '../../services/auth-api-service'
 import Button from '../Button/Button'
 import './RegistrationForm.css'
 import UserContext from '../../contexts/UserContext'
+import Loading from '../Loading/Loading'
 
 class RegistrationForm extends Component {
   static defaultProps = {
     onRegistrationSuccess: () => {}
   }
 
-  state = { error: null }
+  state = { 
+    error: null,
+    isLoading: false
+   }
 
   static contextType = UserContext;
 
@@ -27,6 +31,7 @@ class RegistrationForm extends Component {
       password: password.value,
     })
       .then(user => {
+        this.setState({isLoading: true})
         AuthApiService.postLogin({
           username: username.value,
           password: password.value,
@@ -37,6 +42,7 @@ class RegistrationForm extends Component {
             password.value = ''
             this.context.processLogin(res.authToken)
             this.props.onRegistrationSuccess()
+            this.setState({isLoading: false})
           })
       })
       .catch(res => {
@@ -50,6 +56,11 @@ class RegistrationForm extends Component {
 
   render() {
     const { error } = this.state
+    if (this.state.isLoading === true) {
+      return (
+        <Loading />
+      )
+    }
     return (
       <form
         onSubmit={this.handleSubmit}
