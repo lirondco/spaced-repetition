@@ -1,4 +1,28 @@
-# Spaced Repetition Capstone
+# Spaced Repetition Capstone 
+
+# Live App: https://spaced-repetition-ggfun9pzl-lirondco.vercel.app/register
+
+## About The App
+
+This app is a demo of the [« spaced repetition »](https://en.wikipedia.org/wiki/Spaced_repetition) method of learning new vocabulary in a foreign language. Currently only Hebrew is supported, but you can fork this repo and then the matching [server repo](https://github.com/lirondco/spaced-repetition-api) if you would like to expand this app and include your own languages. 
+
+### How to use
+
+#### Login and Registration
+
+A user when not logged in is redirected to the registration page upon visiting the home page. The user can then either register as a new user or log in as an existing one using their credentials.
+
+#### Dashboard
+
+A user once registered or logged in will be redirected to the dashboard that contains a list of all words that need to be practised, their current score, the name of the language, and a link to start practising. 
+
+#### Learning Mode
+
+Once you click the link to start practising, you will be directed to a learning page where you will be presented with a Hebrew word or phrase that you need to translate, your total score, and the number of times you got this word correctly and incorrectly. You will then be prompted to input your answer and once you click the submit button, you will be redirected to a page that gives you a feedback whether or not you got the word correctly.
+
+### API Documentation
+
+For API Documentation please visit the [server repo](https://github.com/lirondco/spaced-repetition-api).
 
 ## Setup
 
