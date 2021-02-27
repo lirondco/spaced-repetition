@@ -4,6 +4,13 @@ import { Input, Label } from '../Form/Form'
 import './Word.css'
 
 export default class Word extends Component {
+
+    firstInput = React.createRef()
+
+    componentDidMount() {
+        this.firstInput.current.focus()
+      }
+    
     render() {
         return (
             <div className = "guess_word">
@@ -15,7 +22,8 @@ export default class Word extends Component {
                     >
                         What's the translation for this word?
                     </Label>
-                    <Input 
+                    <Input
+                        ref = {this.firstInput} 
                         id = "learn-guess-input"
                         name = "guess"
                         type = "text"

@@ -9,6 +9,7 @@ h1 {
 
 .navbarlink {
     margin: 1%;
+    font-size: x-large;
 }
 
 a {
@@ -16,11 +17,13 @@ a {
 }
 
 header {
-    background-color: #E54443;
+    background-color: #D43332;
     padding: 1%;
     text-align: center;
 }
 
 .userName {
-    color: #E3DBB6;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
 }

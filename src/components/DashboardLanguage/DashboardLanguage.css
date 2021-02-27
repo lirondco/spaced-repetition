@@ -35,5 +35,6 @@
     padding: 4%;
     width: fit-content;
     border: none;
-    border-radius: 25px;
+    border-radius: 10px;
+    font-size: x-large;
 }

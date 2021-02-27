@@ -1,8 +1,9 @@
 button {
-    background-color: #E54443;
+    background-color: #D43332;
     color: white;
     padding: 1%;
     width: fit-content;
     border: none;
-    border-radius: 25px;
+    border-radius: 10px;
+    font-size: x-large;
 }

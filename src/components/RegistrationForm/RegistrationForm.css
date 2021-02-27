@@ -11,3 +11,18 @@ form div {
 form div input {
     margin-left: 1%;
 }
+
+footer button {
+    margin: 2%;
+}
+
+@media screen and (min-width: 700px) {
+    form div {
+        margin: 0.5%;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+  }
