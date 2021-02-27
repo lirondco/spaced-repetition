@@ -24,14 +24,14 @@ class LoginForm extends Component {
     ev.preventDefault()
     const { username, password } = ev.target
 
-    this.setState({ error: null })
+    this.setState({ error: "Verifying ..." })
 
     AuthApiService.postLogin({
       username: username.value,
       password: password.value,
     })
       .then(res => {
-        this.setState({ isLoading: true })
+        this.setState({ error: null, isLoading: true })
         username.value = ''
         password.value = ''
         this.context.processLogin(res.authToken)

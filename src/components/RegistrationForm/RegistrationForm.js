@@ -24,6 +24,7 @@ class RegistrationForm extends Component {
 
   handleSubmit = ev => {
     ev.preventDefault()
+    this.setState({ error: "Verifying ... " })
     const { name, username, password } = ev.target
     AuthApiService.postUser({
       name: name.value,
@@ -31,7 +32,7 @@ class RegistrationForm extends Component {
       password: password.value,
     })
       .then(user => {
-        this.setState({isLoading: true})
+        this.setState({ error: null, isLoading: true })
         AuthApiService.postLogin({
           username: username.value,
           password: password.value,
