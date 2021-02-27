@@ -3,16 +3,28 @@ import RegistrationForm from '../../components/RegistrationForm/RegistrationForm
 import './RegistrationRoute.css'
 
 class RegistrationRoute extends Component {
+  state = {
+    isLoading: false
+  }
   static defaultProps = {
+    location: {},
     history: {
-      push: () => {},
+      push: () => { },
     },
   }
 
-  handleRegistrationSuccess = () => {
-    const { history } = this.props
-    history.push('/login')
+  handleIsLoading = () => {
+    this.setState({ isLoading: true })
   }
+
+  handleRegistrationSuccess = () => {
+    this.setState({ isLoading: false })
+    const { location, history } = this.props
+    const destination = (location.state || {}).from || '/'
+    history.push(destination)
+  }
+
+
 
   render() {
     return (
