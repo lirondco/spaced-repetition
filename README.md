@@ -1,6 +1,6 @@
 # Spaced Repetition Capstone 
 
-# Live App: https://spaced-repetition-ggfun9pzl-lirondco.vercel.app/register
+# Live App: https://spacedrep.lirondc.com/
 
 ## About The App
 
